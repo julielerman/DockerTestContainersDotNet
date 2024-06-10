@@ -1,0 +1,12 @@
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/bin/Debug/net8.0/CustomerService.deps.json
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/bin/Debug/net8.0/CustomerService.dll
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/bin/Debug/net8.0/CustomerService.pdb
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/CustomerService.csproj.AssemblyReference.cache
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/CustomerService.GeneratedMSBuildEditorConfig.editorconfig
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/CustomerService.AssemblyInfoInputs.cache
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/CustomerService.AssemblyInfo.cs
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/CustomerService.csproj.CoreCompileInputs.cache
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/CustomerService.dll
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/refint/CustomerService.dll
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/CustomerService.pdb
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/ref/CustomerService.dll
