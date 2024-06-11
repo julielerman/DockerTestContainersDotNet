@@ -1,4 +1,4 @@
-This project is a twist on the Getting Started [doc] (https://testcontainers.com/guides/getting-started-with-testcontainers-for-dotnet) for dotnet developers on the TestContainers website.
+This project is a twist on the Getting Started [doc](https://testcontainers.com/guides/getting-started-with-testcontainers-for-dotnet) for dotnet developers on the TestContainers website.
 
 ## TLDR TestContainers ##
 With a simple reference to a particular TestContainer package (in this demo it is for PostgreSQL), you can create an object in code to simply use what is exposed in the container.
