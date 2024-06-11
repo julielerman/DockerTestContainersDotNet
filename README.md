@@ -1,7 +1,7 @@
 This project is a twist on the Getting Started [doc] (https://testcontainers.com/guides/getting-started-with-testcontainers-for-dotnet) for dotnet developers on the TestContainers website.
 
 ## TLDR TestContainers ##
-With a simple reference to a particular TestContainre package (in this demo it is for PostgreSQL), you can create an object in code to simply use what is exposed in the container.
+With a simple reference to a particular TestContainer package (in this demo it is for PostgreSQL), you can create an object in code to simply use what is exposed in the container.
 
 For example, in this solution, the test project csproj file has a reference to the Testcontainers.PostgreSql package. In the test, you'll use its API to build a local image  ...but it's just another object in your logic.
 
