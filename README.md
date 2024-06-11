@@ -20,7 +20,7 @@ Rather than using raw ADO.NET to interact with PostgreSQL as the original soluti
 ## The two branches ##
 
 ### main branch ###
-The main branch has a Customer Service project. You can add to this by creating a test project (instrux below) that uses an npgsql Test container to run the tests without having to be concerend with accessing the image or starting a container.
+The main branch has a Customer Service project. You can add to this by creating a test project (instructions below) that uses an npgsql Test container to run the tests without having to be concerend with accessing the image or starting a container.
 
 The project has a Customer record type defined in a customers.cs file, an EF Core DbContext called CustomersContext and a CustomerService class with methods to add a customer and retrieve all customers from the database using EF Core.
 
