@@ -5,13 +5,15 @@ Rather than using raw code to interact with PostgreSQL, this solution takes adva
 There are two branches.
 
 ## main branch ##
-The main branch has a Customer Service project. You can add to this by creating a test project that uses an npgsql Test container to run the tests without having to be concerend with accessing the image or starting a container.
+The main branch has a Customer Service project. You can add to this by creating a test project (instrux below) that uses an npgsql Test container to run the tests without having to be concerend with accessing the image or starting a container.
+
+The project has a Customer record type defined in a customers.cs file, an EF Core DbContext called CustomersContext and a CustomerService class with methods to add a customer and retrieve all customers from the database using EF Core.
 
 ## IncludingTests branch ##
 The IncludingTests branch includes the already built test project which you can test or use to compare to your own code.
 
 ## Adding the test project to the main solution ##
-Instructions to add the test project manually and get a feel for how to add a test container on your own:
+This will help you to get a feel for how to add a test container on your own:
 
 * Create a new test project (I used XUnit) in the solution called CustomerService.Tests. If you are using the CLI, the command is
 If you are working at the command line you can use the following commands:
@@ -27,7 +29,7 @@ dotnet add ./CustomerService.Tests/CustomerService.Tests.csproj reference ./Cust
 ```
 <PackageReference Include="Testcontainers.PostgreSql" Version="3.3.0" />
 ```
-With that you can use it in your test code. In the unit test file, you'll create an object from the testcontainer.
+With that, you can access the TestContainer  in your test code. Youyou'll create an object from the testcontainer.
 
 * Start with using statements in your test class and your class should implement IAsyncLifetime.
 
@@ -51,7 +53,7 @@ public sealed class CustomerServiceTest : IAsyncLifetime
 
 ```
 
-The container will need to be started and taken down during the test. XUnit will call InitializeAsync and DisposeAsync internally so you can override those methods so they start and stop the container.
+* The container will need to be started and taken down during the test. XUnit will call InitializeAsync and DisposeAsync internally. Override those methods in the class so they will start and stop the container.
 
 ```
   public Task InitializeAsync()
@@ -65,7 +67,7 @@ The container will need to be started and taken down during the test. XUnit will
     }
 ```
 
-Finally, we have the test! It will grab the default connection string from the container (_postgres variable) and use that to pass in the needed db options to the EF Core CustomersContext defined in the service project.
+Finally, we have the test, itself! The following code will grab the default connection string from the container (_postgres variable) and use that to pass in the needed db options to the EF Core CustomersContext defined in the service project.
 
 Then it creates two new customers using methods in the service which also saves them to the database.
 
