@@ -15,8 +15,6 @@ Then you can interact with the object as you will see in the test project code d
 
 Rather than using raw ADO.NET to interact with PostgreSQL as the original solution, my version uses EF Core.
 
-
-
 ## The two branches ##
 
 ### main branch ###
@@ -110,8 +108,8 @@ Next it retrieves all customers from the database and asserts that there are two
 ```
 ## Time to Test ##
 
-Many ways to test:  
+There are many ways to test and they are dependent on your personal pref.  
 
-CLI using `dotnet test` 
+If you are using CLI, then be sure you are in the test folder and run `dotnet test` 
 
-UI testing tools in your favorite IDEs.
+You can also of course use all of the fancy testing tools in Visual Studio and other IDEs.
