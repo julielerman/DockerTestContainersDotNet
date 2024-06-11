@@ -5,7 +5,7 @@ With a simple reference to a particular TestContainer package (in this demo it i
 
 For example, in this solution, the test project csproj file has a reference to the Testcontainers.PostgreSql package. In the test, you'll use its API to build a local image  ...but it's just another object in your logic.
 
-```
+```c#
 private readonly PostgreSqlContainer _postgres = new PostgreSqlBuilder()
         .WithImage("postgres:15-alpine")
         .Build();
@@ -33,7 +33,7 @@ This will help you to get a feel for how to add a test container on your own:
 * Create a new test project (I used XUnit) in the solution called CustomerService.Tests. If you are using the CLI, the command is
 If you are working at the command line you can use the following commands:
 
-```
+```c#
 dotnet new xunit -o CustomerService.Tests
 dotnet sln add ./CustomerService.Tests/CustomerService.Tests.csproj  
 dotnet add ./CustomerService.Tests/CustomerService.Tests.csproj reference ./CustomerService/CustomerService.csproj
@@ -41,14 +41,14 @@ dotnet add ./CustomerService.Tests/CustomerService.Tests.csproj reference ./Cust
 
 * The key to the test container is to have a package reference to it in the csproj file. Use your favorite method of getting that into the file.
 
-```
+```c#
 <PackageReference Include="Testcontainers.PostgreSql" Version="3.3.0" />
 ```
-With that, you can access the TestContainer  in your test code. Youyou'll create an object from the testcontainer.
+With that, you can access the TestContainer  in your test code. You'll create an object from the testcontainer.
 
 * Start with using statements in your test class and your class should implement IAsyncLifetime.
 
-```
+```c#
 using CustomersDemo;  //points to the other project
 using Testcontainers.PostgreSql; //points to the container
 using Microsoft.EntityFrameworkCore;
@@ -61,7 +61,7 @@ public sealed class CustomerServiceTest : IAsyncLifetime
 
 * Define the container object as a variable in the class:
 
-```
+```c#
     private readonly PostgreSqlContainer _postgres = new PostgreSqlBuilder()
         .WithImage("postgres:15-alpine")
         .Build();
@@ -70,7 +70,7 @@ public sealed class CustomerServiceTest : IAsyncLifetime
 
 * The container will need to be started and taken down during the test. XUnit will call InitializeAsync and DisposeAsync internally. Override those methods in the class so they will start and stop the container.
 
-```
+```c#
   public Task InitializeAsync()
     {
         return _postgres.StartAsync();
@@ -88,7 +88,7 @@ Then it creates two new customers using methods in the service which also saves 
 
 Next it retrieves all customers from the database and asserts that there are two.
 
-```
+```c#
  [Fact]
     public void ShouldReturnTwoCustomers()
     {
