@@ -1,6 +1,21 @@
 This project is a twist on the Getting Started [doc] (https://testcontainers.com/guides/getting-started-with-testcontainers-for-dotnet) for dotnet developers on the TestContainers website.
 
-Rather than using raw code to interact with PostgreSQL, this solution takes advantage of EF Core.
+TLDR TestContainers
+With a simple reference to a particular TestContainre package (in this demo it is for PostgreSQL), you can create an object in code to simply use what is exposed in the container.
+
+For example, in this solution, the test project csproj file has a reference to the Testcontainers.PostgreSql package. In the test, you'll use its API to build a local image  ...but it's just another object in your logic.
+
+```
+private readonly PostgreSqlContainer _postgres = new PostgreSqlBuilder()
+        .WithImage("postgres:15-alpine")
+        .Build();
+```
+
+Then you can interact with the object as you will see in the test project code described below. In this case that will be starting and stopping the container, reading its connection string and interacting with the database.
+
+Rather than using raw ADO.NET to interact with PostgreSQL as the original solution, my version uses EF Core.
+
+
 
 There are two branches.
 
