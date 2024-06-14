@@ -10,3 +10,4 @@
 /Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/refint/CustomerService.dll
 /Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/CustomerService.pdb
 /Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/ref/CustomerService.dll
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService/obj/Debug/net8.0/CustomerService.sourcelink.json

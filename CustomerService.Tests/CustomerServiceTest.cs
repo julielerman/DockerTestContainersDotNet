@@ -25,10 +25,11 @@ public sealed class CustomerServiceTest : IAsyncLifetime
     {
         var builder = new DbContextOptionsBuilder<CustomersContext>()
     .UseNpgsql(_postgres.GetConnectionString());
-
+     var context=new CustomersContext(builder.Options);
+     context.Database.EnsureCreated();
         // Given
         var customerService = 
-          new CustomerService(new CustomersContext(builder.Options));
+          new CustomerService(context);
 
         // When
         customerService.Create(new Customer(1, "George"));

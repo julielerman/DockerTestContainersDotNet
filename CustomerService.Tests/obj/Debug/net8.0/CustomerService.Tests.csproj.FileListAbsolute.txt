@@ -120,3 +120,4 @@
 /Users/julielerman/testcontainers/TestcontainersDemo/CustomerService.Tests/obj/Debug/net8.0/CustomerService.Tests.pdb
 /Users/julielerman/testcontainers/TestcontainersDemo/CustomerService.Tests/obj/Debug/net8.0/CustomerService.Tests.genruntimeconfig.cache
 /Users/julielerman/testcontainers/TestcontainersDemo/CustomerService.Tests/obj/Debug/net8.0/ref/CustomerService.Tests.dll
+/Users/julielerman/testcontainers/TestcontainersDemo/CustomerService.Tests/obj/Debug/net8.0/CustomerService.Tests.sourcelink.json
