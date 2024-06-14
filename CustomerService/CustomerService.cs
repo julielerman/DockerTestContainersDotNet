@@ -9,8 +9,7 @@ public sealed class CustomerService
     public CustomerService(CustomersContext context)
     {
         _context = context;
-        _context.Database.EnsureCreated();
-    }
+     }
 
     public IEnumerable<Customer> GetCustomers()
     {
