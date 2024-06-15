@@ -15,15 +15,20 @@ Then you can interact with the object as you will see in the test project code d
 
 Rather than using raw ADO.NET to interact with PostgreSQL as the original solution, my version uses EF Core.
 
-## The two branches ##
+## The 3 branches ##
 
 ### main branch ###
-The main branch has a Customer Service project. You can add to this by creating a test project (instructions below) that uses an npgsql Test container to run the tests without having to be concerend with accessing the image or starting a container.
+The main branch has a Customer Service project that anticipates you'll be using PostgreSQL as the database. You can add to this by creating a test project (instructions below) that uses an npgsql Test container to run the tests without having to be concerend with accessing the image or starting a container.
 
 The project has a Customer record type defined in a customers.cs file, an EF Core DbContext called CustomersContext and a CustomerService class with methods to add a customer and retrieve all customers from the database using EF Core.
 
 ### IncludingTests branch ###
-The IncludingTests branch includes the already built test project which you can test or use to compare to your own code.
+The IncludingTests branch includes the already built test project (using Postgres and the relavant testcontainer) which you can test or use to compare to your own code.
+
+### TestAgainstSqlServer ###
+This is the full solution but I've shifted the customer class from a record to a class that anticipates that the database will generate the Id.
+The test project uses the MsSql test container and the test class shows how to instantiate that container. Be sure to check out the ReadMe which sets expectations related to performance for this simplistic demo and pointers to learn more about more realistic usage.
+
 
 ## Adding the test project to the main solution ##
 This will help you to get a feel for how to add a test container on your own:
