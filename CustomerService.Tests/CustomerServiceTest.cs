@@ -1,30 +1,30 @@
-using Testcontainers.PostgreSql;
+using Testcontainers.MsSql;
 using CustomersDemo;
 using Microsoft.EntityFrameworkCore;
 namespace Customers.Tests;
 
 public sealed class CustomerServiceTest : IAsyncLifetime
 {
-    private readonly PostgreSqlContainer _postgres = new PostgreSqlBuilder()
-        .WithImage("postgres:15-alpine")
-        .Build();
+   private readonly MsSqlContainer _mssql = 
+   new MsSqlBuilder()
+   .WithImage("mcr.microsoft.com/mssql/server:2022-latest")
+   .Build();
         
-   
     public Task InitializeAsync()
     {
-        return _postgres.StartAsync();
+        return _mssql.StartAsync();
     }
 
     public Task DisposeAsync()
     {
-        return _postgres.DisposeAsync().AsTask();
+        return _mssql.DisposeAsync().AsTask();
     }
 
     [Fact]
     public void ShouldReturnTwoCustomers()
     {
         var builder = new DbContextOptionsBuilder<CustomersContext>()
-    .UseNpgsql(_postgres.GetConnectionString());
+    .UseSqlServer(_mssql.GetConnectionString());
      var context=new CustomersContext(builder.Options);
      context.Database.EnsureCreated();
         // Given
@@ -32,8 +32,8 @@ public sealed class CustomerServiceTest : IAsyncLifetime
           new CustomerService(context);
 
         // When
-        customerService.Create(new Customer(1, "George"));
-        customerService.Create(new Customer(2, "John"));
+        customerService.Create(new Customer("George"));
+        customerService.Create(new Customer( "John"));
         var customers = customerService.GetCustomers();
 
         // Then

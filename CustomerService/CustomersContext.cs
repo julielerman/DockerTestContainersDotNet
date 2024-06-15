@@ -1,7 +1,4 @@
-
-using CustomersDemo;
 using Microsoft.EntityFrameworkCore;
-
 
 namespace CustomersDemo;
 
